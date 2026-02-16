@@ -5,31 +5,31 @@ import { ensureDirs, screenshotsDir } from '../../src/api/utils/paths';
 import path from 'node:path';
 
 test('Exercise 1: Google -> Wikipedia -> phrase paragraph screenshot', async ({ page }) => {
-  ensureDirs();
+    ensureDirs();
 
-  const google = new GooglePage(page);
-  await google.goto();
-  await google.search('Automatización');
+    const google = new GooglePage(page);
+    await google.goto();
+    await google.search('Automatización');
 
-  await google.clickWikipediaResult();
+    await google.clickWikipediaResult();
 
-  const wiki = new WikipediaPage(page);
+    const wiki = new WikipediaPage(page);
 
 
-  if (!page.url().includes('en.wikipedia.org')) {
-    await wiki.changeLanguageToEnglish();
-  }
+    if (!page.url().includes('en.wikipedia.org')) {
+        await wiki.changeLanguageToEnglish();
+    }
 
-  expect(page.url()).toContain('en.wikipedia.org');
+    expect(page.url()).toContain('en.wikipedia.org');
 
-  const screenshotPath = path.join(
-    screenshotsDir,
-    'wikipedia-first-completely-automated-process-paragraph.png'
-  );
+    const screenshotPath = path.join(
+        screenshotsDir,
+        'wikipedia-search-result.png'
+    );
 
-  await wiki.screenshotParagraphByPhrase(
-    'first completely automated process',
-    screenshotPath
-  );
+    await wiki.screenshotParagraphByPhrase(
+        'first completely automated industrial process',
+        screenshotPath
+    );
 
 });

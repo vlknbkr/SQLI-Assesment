@@ -22,22 +22,11 @@ export class WikipediaPage {
     ): Promise<Buffer> {
         await this.waitForContent();
 
-        const paragraphs = this.page.locator(this.selectors.paragraph);
-        const count = await paragraphs.count();
-        console.log('Total paragraphs found:', count);
-        for (let i = 0; i < count; i++) {
-            const p = paragraphs.nth(i);
-            const text = await p.textContent();
-            console.log(`Paragraph ${i}: ${text}`);
-        }
-
-
         const para = this.page
             .locator(this.selectors.paragraph)
             .filter({ hasText: new RegExp(phrase, 'i') })
             .first();
         const found = await para.waitFor({ state: 'visible', timeout: 3000 }).then(() => true).catch(() => false);
-
 
         if (!found) {
             throw new Error(`Could not find phrase "${phrase}" inside any paragraph on Wikipedia`);
