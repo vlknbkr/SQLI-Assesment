@@ -1,0 +1,16 @@
+{
+  "name": "sqli-assessment",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:web": "playwright test tests/web",
+    "test:api": "playwright test tests/api",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "typescript": "^5.6.3"
+  }
+}
