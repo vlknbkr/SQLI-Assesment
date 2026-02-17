@@ -1,25 +1,22 @@
 import { APIRequestContext, APIResponse, expect } from '@playwright/test';
 
 export class HttpClient {
-  constructor(
-    private readonly request: APIRequestContext,
-    private readonly baseURL: string
-  ) {}
+  constructor(private readonly request: APIRequestContext) { }
 
   async get<T>(path: string): Promise<T> {
-    const res = await this.request.get(this.baseURL + path);
-    await this.assertOk(res, 'GET', path);
-    return (await res.json()) as T;
+    const response = await this.request.get(path);
+    await this.assertOk(response, 'GET', path);
+    return (await response.json()) as T;
   }
 
   async post<T>(path: string, body: unknown): Promise<T> {
-    const res = await this.request.post(this.baseURL + path, { data: body });
-    await this.assertOk(res, 'POST', path);
-    return (await res.json()) as T;
+    const response = await this.request.post(path, { data: body });
+    await this.assertOk(response, 'POST', path);
+    return (await response.json()) as T;
   }
 
-  private async assertOk(res: APIResponse, method: string, path: string) {
-    expect(res.ok(), `${method} ${path} failed: ${res.status()} ${res.statusText()}\n${await res.text()}`)
+  private async assertOk(response: APIResponse, method: string, path: string) {
+    expect(response.ok(), `${method} ${path} failed: ${response.status()} ${response.statusText()}\n${await response.text()}`)
       .toBeTruthy();
   }
 }
