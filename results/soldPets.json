@@ -1,82 +1,46 @@
 [
   {
-    "id": 9,
-    "name": "King Kong"
-  },
-  {
-    "id": 9223372036854775000,
-    "name": "FluffyTest"
-  },
-  {
-    "id": 9223372016900058000,
-    "name": "doggie"
-  },
-  {
     "id": 76342797,
     "name": "doggie"
   },
   {
-    "id": 755819,
+    "id": 13,
+    "name": null
+  },
+  {
+    "id": 9,
+    "name": "King Kong"
+  },
+  {
+    "id": 104,
+    "name": "atom"
+  },
+  {
+    "id": 777041,
+    "name": "Мурзик_Dubova"
+  },
+  {
+    "id": 1205,
     "name": "doggie"
   },
   {
-    "id": 589438,
+    "id": 1207,
+    "name": "luna"
+  },
+  {
+    "id": 255822,
+    "name": "UpdatedPetName"
+  },
+  {
+    "id": 872751,
     "name": "doggie"
   },
   {
-    "id": 18399,
-    "name": "Updated Name"
-  },
-  {
-    "id": 97383,
-    "name": "Updated Name"
-  },
-  {
-    "id": 35411,
-    "name": "Updated Name"
-  },
-  {
-    "id": 29285,
-    "name": "Updated Name"
-  },
-  {
-    "id": 67400,
-    "name": "Updated Name"
-  },
-  {
-    "id": 71560,
-    "name": "Updated Name"
-  },
-  {
-    "id": 9223372036854776000,
-    "name": "cat"
-  },
-  {
-    "id": 878134,
+    "id": 366982,
     "name": "doggie"
   },
   {
-    "id": 722012,
-    "name": "doggie"
-  },
-  {
-    "id": 10823,
-    "name": "Updated Name"
-  },
-  {
-    "id": 4917,
-    "name": "Updated Name"
-  },
-  {
-    "id": 121231,
-    "name": "Maryna121"
-  },
-  {
-    "id": 1,
-    "name": "dog"
-  },
-  {
-    "id": 709763,
-    "name": "UpdatedDog-709763"
+    "id": 824611,
+    "name": "UpdatedDog-824611"
   }
 ]
